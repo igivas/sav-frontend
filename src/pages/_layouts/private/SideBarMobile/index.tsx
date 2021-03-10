@@ -44,34 +44,18 @@ const SideBarMobile: React.FC<ISideBarProps> = ({ isOpen, onClose }) => {
             />
             <MenuItem
               to="/veiculos/cadastro"
-              label="CADASTRO DE VEÍCULO"
+              label="CADASTROS"
               icon={MdEdit}
               onClose={onClose}
             />
-            <MenuItem
-              to="/pneus/cadastro"
-              label="CADASTRO DE PNEUS"
-              icon={MdEdit}
-              onClose={onClose}
-            />
+            
             <MenuItem
               to="/veiculos/consulta"
-              label="CONSULTA DE VEÍCULO"
+              label="CONSULTAS"
               icon={MdSearch}
               onClose={onClose}
             />
-            <MenuItem
-              to="/marcas/consulta"
-              label="CONSULTA DE MARCA"
-              icon={MdSearch}
-              onClose={onClose}
-            />
-            <MenuItem
-              to="/referencias/consulta"
-              label="CONSULTA DE REFERÊNCIA"
-              icon={MdSearch}
-              onClose={onClose}
-            />
+            
           </DrawerBody>
         </DrawerContent>
       </DrawerOverlay>
