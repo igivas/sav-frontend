@@ -12,11 +12,25 @@ import {
 
 import Logo from './Logo';
 import MenuItem from './Menu';
+import MenuDropdown from './MenuDropdown';
 
 interface ISideBarProps {
   isOpen: boolean;
   onClose(): void;
 }
+
+const cadastrosItems = [
+  { label: 'Veículos', to: '/veiculos/cadastro' },
+  { label: 'Pneu', to: '/pneus/cadastro' },
+  /* { label: 'Situações', to: '/situacoes/cadastro' },
+  { label: 'Movimentações', to: '/movimentacoes/cadastro' }, */
+];
+
+const consultasItems = [
+  { label: 'Veículos', to: '/veiculos/consulta' },
+  { label: 'Marcas', to: '/marcas/consulta' },
+  { label: 'Referências', to: '/referencias/consulta' },
+];
 
 const SideBarMobile: React.FC<ISideBarProps> = ({ isOpen, onClose }) => {
   return (
@@ -42,20 +56,17 @@ const SideBarMobile: React.FC<ISideBarProps> = ({ isOpen, onClose }) => {
               icon={MdDashboard}
               onClose={onClose}
             />
-            <MenuItem
-              to="/veiculos/cadastro"
-              label="CADASTROS"
+            <MenuDropdown
+              label="Cadastros"
               icon={MdEdit}
-              onClose={onClose}
+              items={cadastrosItems}
             />
-            
-            <MenuItem
-              to="/veiculos/consulta"
-              label="CONSULTAS"
+
+            <MenuDropdown
+              label="Consultas"
               icon={MdSearch}
-              onClose={onClose}
+              items={consultasItems}
             />
-            
           </DrawerBody>
         </DrawerContent>
       </DrawerOverlay>
